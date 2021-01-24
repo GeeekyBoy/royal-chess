@@ -55,21 +55,11 @@ jobs:
           zip --junk-paths /C/_/royal-chess-${{ matrix.arch }} /C/_/bin/${{ matrix.arch }}/*
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
+          name: Nightly Builds
+          tag: nightly
+          allowUpdates: true
           prerelease: true
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: /C/_/royal-chess-${{ matrix.arch }}.zip
-          asset_name: royal-chess-${{ matrix.arch }}.zip
-          asset_content_type: application/zip
+          artifacts: C:/_/royal-chess-${{ matrix.arch }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
