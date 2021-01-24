@@ -1,5 +1,7 @@
 # Royal Chess
 
+![windows](https://github.com/geeekyboy/royal-chess/workflows/windows/badge.svg)
+
 ![](./img/textLogo.png)
 
 ## Table Of Contents:
