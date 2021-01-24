@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.tcc": "c",
+        "chrono": "c",
+        "limits": "c",
+        "numeric": "c",
+        "ratio": "c",
+        "shared_mutex": "c",
+        "streambuf": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "*.inc": "c",
+        "*.def": "c",
+        "condition_variable": "c"
+    }
+}

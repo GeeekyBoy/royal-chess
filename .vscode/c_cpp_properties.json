@@ -1,0 +1,32 @@
+{
+    "configurations": [
+      {
+        "name": "C Linux GTK3",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include",
+          "C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed",
+          "C:/msys64/mingw64/x86_64-w64-mingw32/include",
+          "C:/msys64/mingw64/include"
+        ],
+        "defines": [
+          "__ASSETS__=\"\""
+        ],
+        "compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+        "cStandard": "c17",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "clang-x64",
+        "compilerArgs": [
+          "-IC:/msys64/mingw64/include",
+          "-LC:/msys64/mingw64/lib",
+          "-lSDL2main",
+          "-lSDL2",
+          "-lSDL2_ttf",
+          "-lSDL2_mixer",
+          "-municode",
+          "-mwindows"
+        ]
+      }
+    ],
+    "version": 4
+  }

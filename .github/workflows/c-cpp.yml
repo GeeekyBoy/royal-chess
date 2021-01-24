@@ -1,0 +1,75 @@
+name: main
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include: [
+          { msystem: MINGW64, arch: x86_64 },
+          { msystem: MINGW32, arch: i686   }
+        ]
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          path: temp
+          fetch-depth: 0
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MSYS
+          install: git zip base-devel binutils mingw-w64-${{ matrix.arch }}-toolchain
+          update: true
+
+      - name: Move Checkout
+        run: |
+          Copy-Item -Path ".\temp" -Destination "C:\_" -Recurse
+      - name: Installing SDL2 i686
+        shell: msys2 {0}
+        if: ${{ matrix.arch == 'i686' }}
+        run: |
+          cd /C/_
+          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2
+          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_mixer
+          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_ttf
+      - name: Installing SDL2 x86_64
+        shell: msys2 {0}
+        if: ${{ matrix.arch == 'x86_64' }}
+        run: |
+          cd /C/_
+          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2
+          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_mixer
+          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_ttf
+      - name: CI-Build
+        shell: msys2 {0}
+        run: |
+          cd /C/_
+          make versionInfo-${{ matrix.arch }}
+          make game-${{ matrix.arch }}
+          zip --junk-paths /C/_/royal-chess-${{ matrix.arch }} /C/_/bin/${{ matrix.arch }}/*
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: true
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /C/_/royal-chess-${{ matrix.arch }}.zip
+          asset_name: royal-chess-${{ matrix.arch }}.zip
+          asset_content_type: application/zip
