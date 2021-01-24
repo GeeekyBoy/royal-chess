@@ -1,6 +1,6 @@
 # Royal Chess
 
-![windows](https://github.com/geeekyboy/royal-chess/workflows/windows/badge.svg)
+![main](https://github.com/GeeekyBoy/royal-chess/workflows/main/badge.svg)
 
 ![](./img/textLogo.png)
 
