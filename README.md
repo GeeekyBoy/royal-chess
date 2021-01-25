@@ -104,12 +104,12 @@ In order to build *Royal Chess* for 32bit and 64bit versions of *Windows*, you h
 ```bash
    pacman -S --needed base-devel mingw-w64-x86_64-toolchain
    pacman -S --needed base-devel mingw-w64-i686-toolchain
-   pacman -S mingw-w64-x86_64-SDL2
-   pacman -S mingw-w64-i686-SDL2
-   pacman -S mingw-w64-x86_64-SDL2_mixer
-   pacman -S mingw-w64-i686-SDL2_mixer
-   pacman -S mingw-w64-x86_64-SDL2_ttf
-   pacman -S mingw-w64-i686-SDL2_ttf
+   pacman -S mingw64/mingw-w64-x86_64-SDL2
+   pacman -S mingw32/mingw-w64-i686-SDL2
+   pacman -S mingw64/mingw-w64-x86_64-SDL2_mixer
+   pacman -S mingw32/mingw-w64-i686-SDL2_mixer
+   pacman -S mingw64/mingw-w64-x86_64-SDL2_ttf
+   pacman -S mingw32/mingw-w64-i686-SDL2_ttf
 ```
 
 4. Within *MSYS2* terminal, go to the root of *Royal Chess* source code where *Makefile* exists.

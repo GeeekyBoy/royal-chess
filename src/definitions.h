@@ -175,7 +175,6 @@ int resFactor = 1;
 int logHeight = 0;
 int logScrollPos = 0;
 
-_Bool shouldExit = 0;
 _Bool isFullScreen = 1;
 
 GameWindow currentWindow = MAIN_MENU;

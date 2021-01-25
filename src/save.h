@@ -4,7 +4,7 @@
 #include "definitions.h"
 
 void saveGame() {
-  void getMissingFiles();
+  getMissingFiles();
   FILE *gamedataFile;
   size_t firstSize = sizeof(Gamedata);
   size_t secondSize = data.undoDataSize * sizeof(Step);
@@ -19,7 +19,7 @@ void saveGame() {
 }
 
 void savePGN() {
-  void getMissingFiles();
+  getMissingFiles();
   time_t rawTime = time(NULL);
   struct tm *parsedTime = localtime(&rawTime);
   char formattedTime[25];
@@ -50,7 +50,7 @@ void savePGN() {
 }
 
 void loadGame() {
-  void getMissingFiles();
+  getMissingFiles();
   FILE *gamedataFile;
   size_t firstSize = sizeof(Gamedata);
   char *absPath = SDL_GetBasePath();

@@ -35,17 +35,17 @@ jobs:
         if: ${{ matrix.arch == 'i686' }}
         run: |
           cd /C/_
-          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2
-          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_mixer
-          pacman --sync --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_ttf
+          pacman -S --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2
+          pacman -S --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_mixer
+          pacman -S --noconfirm mingw32/mingw-w64-${{ matrix.arch }}-SDL2_ttf
       - name: Installing SDL2 x86_64
         shell: msys2 {0}
         if: ${{ matrix.arch == 'x86_64' }}
         run: |
           cd /C/_
-          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2
-          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_mixer
-          pacman --sync --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_ttf
+          pacman -S --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2
+          pacman -S --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_mixer
+          pacman -S --noconfirm mingw64/mingw-w64-${{ matrix.arch }}-SDL2_ttf
       - name: CI-Build
         shell: msys2 {0}
         run: |
