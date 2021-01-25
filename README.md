@@ -769,6 +769,10 @@ You can find the visualized version of pseudocode above [here](https://htmlprevi
 
 * **Icons:** https://material.io/resources/icons
 
+**Pixel Perfect:** https://icon54.com/
+
+* **Hand Shake:** https://www.flaticon.com/free-icon/hand-shake_493881
+
 ### Colors
 
 **Starline:** https://www.freepik.com/starline
