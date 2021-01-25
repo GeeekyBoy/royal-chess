@@ -1,3 +1,13 @@
+/**
+ * @file reset.h
+ * @author GeeekyBoy
+ * @brief Reset different stuff within the game.
+ *        Used commonly when starting a game, ending a game
+ *        or exiting the whole program
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef RESET_H 
 #define RESET_H
 

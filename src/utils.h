@@ -1,9 +1,17 @@
+/**
+ * @file utils.h
+ * @author GeeekyBoy
+ * @brief Collection of different utilities used by the other functions.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef UTILS_H
 #define UTILS_H
 
 #include "definitions.h"
 
-char* getPath(char *relPath) {
+char* getAbsPath(char *relPath) {
     char *absPath = SDL_GetBasePath();
     strcat(absPath, relPath);
     return absPath;

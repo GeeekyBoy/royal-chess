@@ -1,12 +1,63 @@
+/**
+ * @file render.h
+ * @author GeeekyBoy
+ * @brief Game frames rendering
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef RENDER_H
 #define RENDER_H
 
 #include "definitions.h"
 
+/**
+ *  \brief Render given chess piece within the given region on the screen.
+ *
+ *  \param piece Case-sensitive character representing piece to be rendered.
+ *  \param x X coordinate of the piece on the screen
+ *  \param y Y coordinates of the piece on the screen
+ *  \param isSmall 1 if the piece will be placed in the inventory
+ *                 of the captured pieces. 0 if otherwise
+ *
+ *  \sa renderPiece
+ */
 static void renderPiece(char piece, int x, int y, _Bool isSmall);
+/**
+ *  \brief render image within the given region on the screen.
+ *
+ *  \param imgInfo Information of the image to be rendered
+ *  \param x X coordinate of the image on the screen
+ *  \param y Y coordinates of the image on the screen
+ *  \param isReveredBoard 1 if the image is a rotated chess board.
+ *                        0 if otherwise
+ *
+ *  \sa renderSVG
+ */
 static void renderSVG(Image imgInfo, int x, int y, _Bool isReveredBoard);
+/**
+ *  \brief render static text within the given region on the screen.
+ *
+ *  \param txtData Information of the image containing text to be rendered
+ *  \param x X coordinate of the text on the screen
+ *  \param y Y coordinates of the text on the screen
+ *
+ *  \sa drawTxt
+ */
 static void drawTxt(Image txtData, int x, int y);
+/**
+ *  \brief render scrollable text within the given region on the screen.
+ *
+ *  \param txtData Information of the image containing text to be rendered
+ *  \param x X coordinate of the text on the screen
+ *  \param y Y coordinates of the text on the screen
+ *  \param width Width of the text container
+ *  \param height Height of the text container
+ *
+ *  \sa drawScrollTxt
+ */
 static void drawScrollTxt(Image txtData, int x, int y, int width, int height);
+
 static void renderPiece(char piece, int x, int y, _Bool isSmall) {
      switch (piece)
     {

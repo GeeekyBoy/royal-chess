@@ -20,7 +20,7 @@
 
 ## Overview
 
-*Royal Chess* is an open source 2D chess game made with *Simple DirectMedia Layer* 2. Its source code is completely written using the most recent standard for C programming language *(C17)*.
+*Royal Chess* is an open source 2D chess game made with *Simple DirectMedia Layer* 2. Its source code is completely written using the most recent standard for C programming language *(C17)*. We believe that this repository is a good starting point for everyone who wants to develop a real game using SDL2. *Royal Chess* is different from most of other SDL2-based games, becuase all of the resources are bundled with the game in one executable file, in addition to the prevention of pixelation of images by including them as SVG files.
 
 ## Features
 
@@ -90,6 +90,10 @@
 ![](./img/Windows10.png)
 
 ## Build Instructions
+
+### Github Workflow
+
+This project comes with a ready Github workflow that builds *Royal Chess* automatically on every commit then pushes the compiled as a release called *Nightly Builds*.
 
 ### Windows
 
@@ -423,13 +427,13 @@ It searches for an attacker in 16 different directions:
 
 * **Direction 5:** Straight (+Y)
 
-* **Direction 6**: Straight (-Y)
+* **Direction 6:** Straight (-Y)
 
 * **Direction 7:** Straight (+X)
 
 * **Direction 8:** Straight (-X)
 
-* **Direction 9:16:** All 8 L-shaped movements.
+* **Direction 9\:16:** All 8 L-shaped movements.
 
 ```pseudocode
 DECLARE IS_CHECKED = FALSE
@@ -477,7 +481,7 @@ It searches for possible moves in 16 different directions:
 
 * **Direction 5:** Straight (+Y)
 
-* **Direction 6**: Straight (-Y)
+* **Direction 6:** Straight (-Y)
 
 * **Direction 7:** Straight (+X)
 
@@ -643,7 +647,7 @@ SCROLL moves log down
 
 ### void setCastlingState (Coordinate coordinate)
 
-A function that modifies the list of pieces qualified for castling.
+A function that modifies the list of pieces qualified for castling. Only makes sense in case the moved piece is king or rook moving from its initial place.
 
 ```pseudocode
 IF current moving piece is king
@@ -659,7 +663,7 @@ END
 
 ### void setEnPassantData (Coordinate firstSquare, Coordinate secondSquare)
 
-A function that updates the square skipped by the moving pawn during the last move. A pawn can skip a square through moving 2 steps forward.
+A function that updates the square skipped by the moving pawn during the last move. A pawn can skip a square through moving 2 steps forward. Only makes sense in case the moved piece is a pawn moving 2 steps forward.
 
 ```pseudocode
 IF current moving piece is pawn

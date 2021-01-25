@@ -1,3 +1,11 @@
+/**
+ * @file lifecycle.h
+ * @author GeeekyBoy
+ * @brief Functions managing the program lifecycle liking creating window and exiting the program.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef LIFECYCLE_H
 #define LIFECYCLE_H
 

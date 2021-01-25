@@ -1,3 +1,11 @@
+/**
+ * @file loadres.h
+ * @author GeeekyBoy
+ * @brief Loading of all game resources including audio and fonts.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef LOADRES_H
 #define LOADRES_H
 
@@ -72,14 +80,22 @@ INCBIN(arrowCursor, __ASSETS__ "cursors/arrow.svg");
 INCBIN(handCursor, __ASSETS__ "cursors/hand.svg");
 INCBIN(robotoFont, __ASSETS__ "fonts/Roboto-Bold.ttf");
 
-static SDL_Cursor* svg2cursor (char *filename);
+/**
+ *  \brief Convert SVG data of the cursor into real cursor
+ *
+ *  \param svgData Data of the included SVG resource
+ *  \return Data of the actual cursor
+ *
+ *  \sa svg2cursor
+ */
+static SDL_Cursor *svg2cursor (char *svgData);
 
-Image svg2tex (char *svgFile) {
+Image svg2tex (char *svgData) {
     Image result;
     NSVGimage *image = NULL;
     NSVGrasterizer *rast = NULL;
     unsigned char *img = NULL;
-    image = nsvgParse(svgFile, "px", 96.0f);
+    image = nsvgParse(svgData, "px", 96.0f);
     result.width = ((int)image->width) * screenScale;
     result.height = ((int)image->height) * screenScale;
     rast = nsvgCreateRasterizer();
@@ -94,12 +110,12 @@ Image svg2tex (char *svgFile) {
     return result;
 }
 
-static SDL_Cursor *svg2cursor (char *svgFile) {
+static SDL_Cursor *svg2cursor (char *svgData) {
     SDL_Cursor *cursor = NULL;
     NSVGimage *image = NULL;
     NSVGrasterizer *rast = NULL;
     unsigned char *img = NULL;
-    image = nsvgParse(svgFile, "px", 96.0f);
+    image = nsvgParse(svgData, "px", 96.0f);
     int width = ((int)image->width) * screenScale;
     int height = ((int)image->height) * screenScale;
     rast = nsvgCreateRasterizer();

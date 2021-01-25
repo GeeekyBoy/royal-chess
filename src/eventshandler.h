@@ -1,3 +1,11 @@
+/**
+ * @file eventsHandler.h
+ * @author GeeekyBoy
+ * @brief Handlers for all mouse events used within the game.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef EVENTSHANDLER_H
 #define EVENTSHANDLER_H
 

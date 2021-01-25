@@ -8,7 +8,7 @@
             "name": "gcc.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\bin\\Royal Chess.exe",
+            "program": "${fileDirname}\\bin\\x86_64\\Royal Chess.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "C:\\msys64\\mingw64\\bin",

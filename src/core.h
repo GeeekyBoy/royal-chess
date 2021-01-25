@@ -1,10 +1,41 @@
+/**
+ * @file core.h
+ * @author GeeekyBoy
+ * @brief Core functions empowering backend of game.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef CORE_H
 #define CORE_H
 
 #include "definitions.h"
 
+/**
+ *  \brief Set the state of current player
+ *         to NONE, CHECK, CHECKMATE, STALEMATE, DEAD_POSITION
+ *
+ *  \sa setPlayerState
+ */
 static void setPlayerState();
+/**
+ *  \brief Know if current combination of pieces is one
+ *         of the four combinations leading to dead position.
+ *
+ *  \sa isDeadPos
+ */
 static _Bool isDeadPos();
+/**
+ *  \brief Know if the given square
+ *         is checked by the opponent or not.
+ *
+ *  \param row Row where the square exists
+ *  \param col Column where the square exists
+ *  \param board Chess board where the square exists
+ *  \return 1 if it is checked, 0 if it is not checked
+ *
+ *  \sa isPosChecked
+ */
 static _Bool isPosChecked(int row, int col, char board[8][8]);
 
 static _Bool isPosChecked(int row, int col, char board[8][8]) {

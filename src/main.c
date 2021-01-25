@@ -1,3 +1,11 @@
+/**
+ * @file main.c
+ * @author GeeekyBoy
+ * @brief Main loop of the program. It does nothing but asks for resolution and receives events.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #include "definitions.h"
 
 #include "core.h"

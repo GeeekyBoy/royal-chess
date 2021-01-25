@@ -1,3 +1,11 @@
+/**
+ * @file undo.h
+ * @author GeeekyBoy
+ * @brief Functions undoing and redoing moves during the game.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef UNDO_H
 #define UNDO_H
 

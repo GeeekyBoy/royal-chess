@@ -1,3 +1,11 @@
+/**
+ * @file save.h
+ * @author GeeekyBoy
+ * @brief Functions saving the game, loading a saved game and saving PGN files.
+ * \copyright Copyright 2021 GeeekyBoy Studio. All rights reserved.
+    This project is released under the GNU Affero General Public License v3.
+ */
+
 #ifndef SAVE_H 
 #define SAVE_H
 
