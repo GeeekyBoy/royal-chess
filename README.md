@@ -727,7 +727,7 @@ END
 
 ## Visual Pseudocode (aka. Flowchart)
 
-You can find the visualized version of pseudocode above [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/geeekyboy/royal-chess/main/img/flowchart.html). For best experience, please view the flowcharts on a device supporting mouse.
+You can find the visualized version of pseudocode above [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/GeeekyBoy/royal-chess/main/img/flowchart.html). For best experience, please view the flowcharts on a device supporting mouse.
 
 ## Credits
 
